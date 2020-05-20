@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - eLaser
   - hLaser
+  - Camera
   layers:
   - Default
   - TransparentFX
