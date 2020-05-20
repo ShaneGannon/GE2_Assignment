@@ -12,11 +12,14 @@ public class hshooting : MonoBehaviour
     public float fireRate;
 
     Transform player;
+    List<Transform> enemies;
+
+    GameObject target;
 
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Enemy").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnEnable()
@@ -42,47 +45,42 @@ public class hshooting : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    // Update is called once per frame
+    void Update()
     {
-        if (other.tag == "Enemy")
+        if(target == null)
+        {
+            FindClosestEnemy();
+        }
+        float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
+        if (distance < 1000 )
         {
             shooting = true;
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Enemy")
+        else
         {
             shooting = false;
         }
     }
-    private void OnTriggerStay(Collider other)
-    {
 
-        if (other.tag == "Enemy")
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
         {
-            Vector3 toPlayer = other.transform.position - transform.position;
-
-
-            transform.rotation = Quaternion.RotateTowards(transform.rotation,
-                Quaternion.LookRotation(toPlayer)
-                , rotSpeed * Time.deltaTime
-                );
-
-            /*
-            transform.rotation = Quaternion.Slerp(transform.rotation,
-                Quaternion.LookRotation(toPlayer)
-                , Time.deltaTime
-                );                
-                */
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        target = closest;
+        return closest;
     }
 }

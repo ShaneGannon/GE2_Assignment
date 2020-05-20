@@ -18,17 +18,13 @@ public class Boid : MonoBehaviour
     public float banking = 0.1f;
     public float maxSpeed = 5.0f;
     public float maxForce = 10.0f;
-    public float health;
-    public float damage;
 
-    float mhealth;
 
 
 
     // Use this for initialization
     void Start()
     {
-        mhealth = health;
 
         SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
 
@@ -97,11 +93,6 @@ public class Boid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health < 1)
-        {
-            Destroy(gameObject);
-        }
-
         force = Calculate();
         Vector3 newAcceleration = force / mass;
         acceleration = Vector3.Lerp(acceleration, newAcceleration, Time.deltaTime);

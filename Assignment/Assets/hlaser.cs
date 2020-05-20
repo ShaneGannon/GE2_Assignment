@@ -23,12 +23,4 @@ public class hlaser : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-            col.GetComponent<Boid>().health += -damage;
-        }
-    }
 }

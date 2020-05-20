@@ -175,8 +175,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &38077889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,8 +528,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &128001441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,8 +743,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &202852946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1017,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325874830}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07fdc2b32df97bc4daec4f944d53ab6c, type: 3}
   m_Name: 
@@ -1061,24 +1055,6 @@ MonoBehaviour:
   banking: 1
   maxSpeed: 3
   maxForce: 10
-  health: 100
-  damage: 0
---- !u!114 &325874833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325874830}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e549a467f3c394ba13b98bc44673a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 1
-  force: {x: 0, y: 0, z: 0}
-  boid: {fileID: 0}
-  target: {fileID: 0}
 --- !u!114 &325874835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1084,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325874830}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1000, y: 300, z: 2500}
@@ -1142,6 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa258e64e6aa7541bc47004d770110d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
 --- !u!54 &325874839
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1311,8 +1288,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349631503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 130, z: 33}
-  m_LocalScale: {x: 500, y: 500, z: 500}
+  m_LocalPosition: {x: 0, y: -103, z: 770}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 2110745551}
   m_RootOrder: 1
@@ -1449,8 +1426,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &366866920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,8 +1520,6 @@ MonoBehaviour:
   banking: 0.5
   maxSpeed: 3
   maxForce: 10
-  health: 500
-  damage: 50
 --- !u!4 &458848049
 Transform:
   m_ObjectHideFlags: 0
@@ -1777,8 +1750,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &550539780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2222,8 +2193,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &728112946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2580,8 +2549,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 3
   maxForce: 10
-  health: 1000
-  damage: 100
 --- !u!114 &885601494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2662,8 +2629,6 @@ MonoBehaviour:
   banking: 0.1
   maxSpeed: 2
   maxForce: 10
-  health: 5000
-  damage: 0
 --- !u!114 &941825577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2867,8 +2832,6 @@ MonoBehaviour:
   banking: 0.5
   maxSpeed: 3
   maxForce: 10
-  health: 500
-  damage: 50
 --- !u!4 &998129252
 Transform:
   m_ObjectHideFlags: 0
@@ -3228,8 +3191,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &1102626793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,8 +3320,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &1396791069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4450,8 +4409,6 @@ MonoBehaviour:
   banking: 0.5
   maxSpeed: 3
   maxForce: 10
-  health: 500
-  damage: 50
 --- !u!4 &1801393425
 Transform:
   m_ObjectHideFlags: 0
@@ -4562,8 +4519,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &1839760049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4779,8 +4734,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &1911809603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4867,8 +4820,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &1968488068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4955,8 +4906,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!114 &2081831426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5037,8 +4986,6 @@ MonoBehaviour:
   banking: 0.7
   maxSpeed: 5
   maxForce: 10
-  health: 100
-  damage: 20
 --- !u!65 &2110745550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5224,9 +5171,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110745547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a74f5b53d6b050458dbc63c81f1e5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  force: {x: 0, y: 0, z: 0}
+  boid: {fileID: 0}
+  leader: {fileID: 325874832}
+--- !u!114 &2110745558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110745547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64f4958ad9944f409410e97b3cd85a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
