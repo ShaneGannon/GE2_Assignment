@@ -18,17 +18,23 @@ public class Boid : MonoBehaviour
     public float banking = 0.1f;
     public float maxSpeed = 5.0f;
     public float maxForce = 10.0f;
+    public float health;
+    public float damage;
+
+    float mhealth;
+
 
 
     // Use this for initialization
     void Start()
     {
+        mhealth = health;
 
         SteeringBehaviour[] behaviours = GetComponents<SteeringBehaviour>();
 
         foreach (SteeringBehaviour b in behaviours)
         {
-            this.behaviours.Add(b);            
+            this.behaviours.Add(b);
         }
     }
 
@@ -56,7 +62,7 @@ public class Boid : MonoBehaviour
 
         return desired - velocity;
     }
-    
+
 
     Vector3 Calculate()
     {
@@ -80,7 +86,7 @@ public class Boid : MonoBehaviour
                 {
                     force = Vector3.ClampMagnitude(force, maxForce);
                     break;
-                }               
+                }
             }
         }
 
@@ -91,13 +97,18 @@ public class Boid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health < 1)
+        {
+            Destroy(gameObject);
+        }
+
         force = Calculate();
         Vector3 newAcceleration = force / mass;
         acceleration = Vector3.Lerp(acceleration, newAcceleration, Time.deltaTime);
         velocity += acceleration * Time.deltaTime;
 
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
-        
+
         if (velocity.magnitude > float.Epsilon)
         {
             Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
@@ -107,4 +118,5 @@ public class Boid : MonoBehaviour
             velocity *= (1.0f - (damping * Time.deltaTime));
         }
     }
+
 }
