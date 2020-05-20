@@ -8,6 +8,8 @@ TagManager:
   - Base
   - Human
   - Bullet
+  - eLaser
+  - hLaser
   layers:
   - Default
   - TransparentFX

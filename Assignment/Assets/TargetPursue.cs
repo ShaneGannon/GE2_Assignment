@@ -1,31 +1,38 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 
 public class TargetPursue : SteeringBehaviour
 {
-    public Boid leader;
-    Vector3 targetPos;
-    Vector3 worldTarget;
+    public GameObject targetGameObject = null;
+    public Vector3 target = Vector3.zero;
 
-    Vector3 offset;
-
-    // Start is called before the first frame update
-    void Start()
+    public void OnDrawGizmos()
     {
-        offset = transform.position - leader.transform.position;
-
-        offset = Quaternion.Inverse(leader.transform.rotation) * offset;
+        if (isActiveAndEnabled && Application.isPlaying)
+        {
+            Gizmos.color = Color.cyan;
+            if (targetGameObject != null)
+            {
+                target = targetGameObject.transform.position;
+            }
+            Gizmos.DrawLine(transform.position, target);
+        }
     }
 
     public override Vector3 Calculate()
     {
-        worldTarget = leader.transform.TransformPoint(offset);
-        float dist = Vector3.Distance(worldTarget, transform.position);
-        float time = dist / boid.maxSpeed;
-        targetPos = gameObject.GetComponent<hshooting>().FindClosestEnemy().transform.position;
-        force = boid.ArriveForce(targetPos);
-        return force;
+        return boid.SeekForce(target);
+    }
 
+    public void Update()
+    {
+        if (targetGameObject != null)
+        {
+            target = gameObject.GetComponent<hshooting>().FindClosestEnemy().transform.position;
+        }
     }
 }
+

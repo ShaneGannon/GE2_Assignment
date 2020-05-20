@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class HumanManager : MonoBehaviour
 {
-    public float health = 1500;
+    public float health = 150;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,10 +22,10 @@ public class EnemyManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "hLaser")
+        if (col.gameObject.tag == "eLaser")
         {
             Destroy(col.gameObject);
-            health = health - col.GetComponent<hlaser>().damage;
+            health = health - col.GetComponent<elaser>().damage;
         }
     }
 
