@@ -53,7 +53,7 @@ public class hshooting : MonoBehaviour
             FindClosestEnemy();
         }
         float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
-        if (distance < 1000 )
+        if (distance < 40 )
         {
             shooting = true;
         }

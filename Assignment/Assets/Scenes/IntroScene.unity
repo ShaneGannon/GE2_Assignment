@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd680af3d877dd54b8c424ed7d629347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneTime: 49
+  SceneTime: 48
   NextScene: InvasionScene
 --- !u!4 &1020449280
 Transform:
